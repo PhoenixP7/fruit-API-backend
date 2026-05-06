@@ -8,14 +8,16 @@ const fruits = require("../controllers/fruits");
 
 router.get("/", fruits.index)
 // The router.get method is used to define a route for the GET HTTP method. The first argument is the path for the route, which in this case is the root path ("/"). The second argument is the controller function that will handle the request and response for this route, which in this case is the index function from the fruits controller. When a GET request is made to the root path, the index function will be called and it will return an array of all the fruits in the fruits.json file.
-router.get("/:name", fruits.show);
+router.get("/:name", fruits.show)
 // /:name is a route parameter that allows us to capture the value of the name parameter in the request. When a GET request is made to this route with a specific name (e.g., "/fruits/apple"), the show function from the fruits controller will be called and it will return the fruit object that matches the name parameter in the request. If there is no fruit that matches the name parameter, it will return an error message saying that the fruit doesn't exist.
-router.post("/", fruits.create);
+router.post("/", fruits.create)
 // The router.post method is used to define a route for the POST HTTP method. The first argument is the path for the route, which in this case is the root path ("/"). The second argument is the controller function that will handle the request and response for this route, which in this case is the create function from the fruits controller. When a POST request is made to the root path, the create function will be called and it will create a new fruit object based on the data provided in the request body.
-router.patch("/:name", fruits.update);
+router.patch("/:name", fruits.update)
 
-router.delete("/:name", fruits.destroy);
-// The router.delete method is used to define a route for the DELETE HTTP method. The first argument is the path for the route, which in this case is "/:name". The second argument is the controller function that will handle the request and response for this route, which in this case is the destroy function from the fruits controller. 
-// When a DELETE request is made to this route with a specific name (e.g., "/fruits/apple"), the destroy function will be called and it will delete the fruit object that matches the name parameter in the request. If there is no fruit that matches the name parameter, it will return an error message saying that the fruit doesn't exist.
+// router.delete("/:name", fruits.destroy);
+// // The router.delete method is used to define a route for the DELETE HTTP method. The first argument is the path for the route, which in this case is "/:name". The second argument is the controller function that will handle the request and response for this route, which in this case is the destroy function from the fruits controller. 
+// // When a DELETE request is made to this route with a specific name (e.g., "/fruits/apple"), the destroy function will be called and it will delete the fruit object that matches the name parameter in the request. If there is no fruit that matches the name parameter, it will return an error message saying that the fruit doesn't exist.
+
+router.delete("/:name", fruits.destroy)
 
 module.exports = router
