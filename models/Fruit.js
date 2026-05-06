@@ -56,10 +56,11 @@ class Fruit { // The Fruit class is defined to represent a fruit object. It has 
     }
 
     destroy() {
-        const deletedFruit = fruits.find(fruit => fruit.name.toLowerCase() === this.name.toLowerCase());
+        const deletedFruit = fruits.find(fruit => fruit.name.toLowerCase() === this.name.toLowerCase())
+        
         if (deletedFruit) {
             const index = fruits.indexOf(deletedFruit) // The indexOf method returns the first index at which a given element can be found in the array, or -1 if it is not present. In this case, we are finding the index of the deleted fruit in the fruits array.
-            fruits.splice(index, 1); // The splice method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. In this case, we are removing one element at the index of the deleted fruit from the fruits array.
+            fruits.splice(index, 1) // The splice method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. In this case, we are removing one element at the index of the deleted fruit from the fruits array.
         } else {
             throw "Fruit not found"
         }

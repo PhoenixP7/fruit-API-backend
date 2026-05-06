@@ -54,7 +54,7 @@ const destroy = async (req, res) => {
     try {
         const fruit = await Fruit.show(name);
         const result = await fruit.destroy();
-        res.sendStatus(204); // 204 is used to indicate that the request was successful and there is no content to send in the response. In this case, since we are deleting a fruit, we use a 204 status code to indicate that the resource was successfully deleted and there is no content to send back to the client.
+        res.status(204); // 204 is used to indicate that the request was successful and there is no content to send in the response. In this case, since we are deleting a fruit, we use a 204 status code to indicate that the resource was successfully deleted and there is no content to send back to the client.
     } catch (err) {
         res.status(404).send({error: err })
     }
